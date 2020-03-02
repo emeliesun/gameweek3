@@ -1,0 +1,95 @@
+header {
+    background-color: lightskyblue;
+    margin: 0;
+    width: 100%;
+    height: 150px;
+}
+.navbox {
+    display: flex;
+    justify-content: center;
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    width: 100%;
+}
+
+.scoretext {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+.scorecount {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    font-size: 40px;
+}
+
+
+
+.row{
+display: flex;
+justify-content: center;
+}
+
+.userchoiceleft {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 100px 0 0px;
+    /* width: 100px; */
+    height: fit-content;
+    margin: 0px;
+}
+
+.gameplayers{
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+img {
+    border: black;
+    border-radius: 40%;
+    width: 100px;
+    height: 100px;
+}
+
+.userchoiceright {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 0 0px 100px;
+    /* width: 100px; */
+    height: fit-content;
+    margin: 0px;
+}
