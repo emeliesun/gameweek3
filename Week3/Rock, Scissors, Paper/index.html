@@ -1,92 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-<header>
-    <nav class="navbox">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbox">
         <h1>Rock, Scissors or Paper</h1>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<div class="scoretext"> SCORE</div>
-
-<div class="scorecount">0-0</div>
-
-<div class="row">
-
-        <div class="userchoiceleft">
-        <h3 class="player2">Player 1 choices</h3>
-        <ul>
-            <li class="btns">
-                <button name="rock-btn">
-                    <img src="./images/rockR.png" alt="Rock">
-                </button>
-            </li>
-            <li class="btns">
-                <button name="scissors-btn">
-                    <img src="./images/scissorsR.png" alt="Scissors">
-                </button>
-            </li>  
-            <li class="btns">
-                <button name="paper-btn">
-                    <img src="./images/paperR.png" alt="Paper">
-                </button>
-            </li> 
-        </ul>
-    </div>
-
-
-
-        <div class="gameplayers">
-        <figure class="player1hand">
-            <img src="./images/rockR.png" alt="player 1 hand">
-            <figcaption><h2>Player 1</h2></figcaption>
-        </figure>
-        <figure class="userhand">
-            <img src="./images/rockL.png" alt="user hand">
-            <figcaption><h2>Player 2</h2></figcaption>
-        </figure>
+  <!-- The start screen Modal -->
+    <div id="myModal2" class="modal notVisible">
+      <!-- Modal content -->
+      <div class="modal-content2">
+        <span class="close2">&times;</span>
+        <p>PLAYER 1/2 won the game!</p>
+        <p>Do you wanna play again</p>
+                <button id="yesBtn2"> YEAAAH!</button>
+                <button id="noBtn2">Nope, aint doing dat!</button>
+      </div>
     </div>
 
 
 
 
-    <div class="userchoiceright">
-        <h3 class="player2">Player 2 choices</h3>
-        <ul>
-            <li class="btns">
-                <button name="rock-btn">
-                    <img src="./images/rockR.png" alt="Rock">
-                </button>
-            </li>
-            <li class="btns">
-                <button name="scissors-btn">
-                    <img src="./images/scissorsR.png" alt="Scissors">
-                </button>
-            </li>  
-            <li class="btns">
-                <button name="paper-btn">
-                    <img src="./images/paperR.png" alt="Paper">
-                </button>
-            </li> 
-        </ul>
+    <!-- The Modal -->
+    <div id="myModal" class="modal notVisible">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>PLAYER 1/2 won the game!</p>
+        <p>Do you wanna play again</p>
+                <button id="yesBtn"> YEAAAH!</button>
+                <button id="noBtn">Nope, aint doing dat!</button>
+      </div>
     </div>
+    
+<div class="scorecount">
+    <div class="scoretext" >SCORE</div>
+    <p id="pvc">0 - 0</p>
 </div>
 
+    <div class="row">
+      <div class="userchoiceleft">
+        <h3>Player 1 choices</h3>
+        <ul>
+          <li class="btns">
+            <button class="rock-btn active">
+              <img src="./images/rockR.png" alt="Rock" style="border: 5px;" />
+              <p>"a"</p>
+            </button>
+          </li>
+          <li class="btns">
+            <button name="scissors-btn">
+              <img src="./images/scissorsR.png" alt="Scissors" />
+              <p>"s"</p>
+            </button>
+          </li>
+          <li class="btns">
+            <button name="paper-btn">
+              <img src="./images/paperR.png" alt="Paper" />
+              <p>"d"</p>
+            </button>
+          </li>
+        </ul>
+      </div>
 
+      <div class="gameplayers">
+        <figure>
+          <img
+            src="./images/rockR.png"
+            alt="player 1 hand"
+            class="player1hand"
+          />
+          <figcaption><h2>Player 1</h2></figcaption>
+        </figure>
 
+        <figure>
+          <img
+            src="./images/rockL.png"
+            alt="user player 2 hand"
+            class="player2hand"
+          />
+          <figcaption><h2>Player 2</h2></figcaption>
+        </figure>
+      </div>
 
+      <div class="userchoiceright">
+        <h3>Player 2 choices</h3>
+        <ul>
+          <li class="btns">
+            <button class="rock-btn-2 active">
+              <img src="./images/rockR.png" alt="Rock" />
+              <p>"j"</p>
+            </button>
+          </li>
+          <li class="btns">
+            <button name="scissors-btn2">
+              <img src="./images/scissorsR.png" alt="Scissors" />
+              <p>"k"</p>
+            </button>
+          </li>
+          <li class="btns">
+            <button name="paper-btn2">
+              <img src="./images/paperR.png" alt="Paper" />
+              <p>"l"</p>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-    
-<script src="./game.js"> </script>
-<script src="./player.js"> </script>
-
-
-</body>
+    <script src="./player.js"></script>
+    <script src="./scoreboard.js"></script>
+    <script src="./game.js"></script>
+  </body>
 </html>

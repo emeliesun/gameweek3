@@ -1,82 +1,169 @@
 class Game {
-    constructor(){
-        this.computer = new Player();
-        this.user = new Player();
-        this.currentPlayer = this.user;
+  constructor() {
+    this.user = new Player1();
+    this.currentPlayer = this.user;
+    this.computer = new Player2();
+    this.scoreboard = new Scoreboard();
+    
+  }
+insertFirstPage(){
+
+   var modal = document.getElementById('myModal2');
+   modal.classList.remove('notVisible');
+   modal.style.display = 'block';
+   var span = document.getElementsByClassName('close2')[0];
+
+   span.onclick = function() {
+     modal.style.display = 'none';
+     modal.setAttribute('class', ' modal notVisible');
+   };
+
+   window.onclick = function(event) {
+     modal.style.display = 'none';
+     modal.setAttribute('class', 'modal notVisible');
+   };
+
+   var yesbtn2 = document.getElementById('yesBtn2');
+   var nobtn2 = document.getElementById('noBtn2');
+
+   yesbtn2.onclick = function(event) {
+     modal.style.display = 'none';
+     modal.setAttribute('class', 'modal notVisible');
+
+          nobtn2.onclick = function(event) {
+            modal.style.display = 'none';
+            game.insertFirstPage();
+            modal.setAttribute('class', 'modal notVisible');
+          };
+
+
+
+ game.resetGame();
+
+   };
+}
+
+  startGame() {
+    setInterval(() => {
+      renderEverything();
+      this.insertFirstPage()
+    }, 100);
+
+    //doesnt work yet.
+    // The event occurs when the user navigates to a webpage = addEventListener("pageshow", function())
+    // var playBtn = document.querySelector('.letsplay');
+    // playBtn.addEventListener('click', function() {
+    //   document.getElementsByClassName('.player1hand').toggle('bounce', { times: 1 }, 'slow');
+    // });
+  }
+
+
+  checkWhoWonTurn() {
+    if (this.currentPlayer.chooseHand === 'a' && this.computer.chooseHand === 'k' || this.currentPlayer.chooseHand === 's' && this.computer.chooseHand === 'l' || this.currentPlayer.chooseHand === 'd' && this.computer.chooseHand === 'j'){
+      console.log('Player 1 wins!');
+      this.scoreboard.userScore ++;
+      this.checkWinner();
+      this.currentPlayer.chooseHand = "";
+      this.computer.chooseHand = "";
+      // this.currentPlayer.increment();
+      // this.updateScore();
+    } else if (this.currentPlayer.chooseHand === 'a' && this.computer.chooseHand === 'l' || this.currentPlayer.chooseHand === 's' && this.computer.chooseHand === 'j' || this.currentPlayer.chooseHand === 'd' && this.computer.chooseHand === 'k') {
+      console.log('Player 2 wins!'); 
+      this.scoreboard.compScore++;
+       this.checkWinner();
+       this.currentPlayer.chooseHand = '';
+       this.computer.chooseHand = '';
+      // this.computer.increment(); 
+      // this.updateScore();
+    } else if ( this.currentPlayer.chooseHand === 'a' && this.computer.chooseHand === 'j' || this.currentPlayer.chooseHand === 's' && this.computer.chooseHand === 'k' || this.currentPlayer.chooseHand === 'd' && this.computer.chooseHand === 'l') {
+      console.log("It's a draw. Play again!");
+         this.currentPlayer.chooseHand = '';
+         this.computer.chooseHand = '';
     }
-
-    checkWhoWonTurn(){
-        let $rockbtn = document.querySelectorAll(".rock-btn");
-        let $scissorsbtn = document.querySelectorAll(".scissors-btn");
-        let $paperbtn = document.querySelectorAll(".paper-btn");
-        switch(this.currentPlayer){
-            case this.currentPlayer === $rockbtn && this.computer === $scissorsbtn:
-                this.currentPlayer.score +=1;
-                alert = "Player 1 wins!"
-                    break;
-            case this.currentPlayer === $scissorsbtn && this.computer === $paper-btn:
-                this.currentPlayer.score += 1;
-                alert = "Player 1 wins!";
-                break;
-            case this.currentPlayer === $paperbtn && this.computer === $rockbtn:
-                this.currentPlayer += 1;
-                alert = "Player 1 wins!";
-                break;
-            case this.currentPlayer === $rockbtn && this.computer === $paperbtn:
-                this.computer.score  += 1 ;
-                alert = "Player 2 wins!"
-                    break;
-            case this.currentPlayer === $scissorsbtn && this.computer === $rockbtn:
-                this.computer.score += 1;
-                alert = "Player 2 wins";
-                break;
-            case this.currentPlayer === $paperbtn && this.computer === $scissorsbtn:
-                this.computer += 1;
-                alert = "Player 2 wins!";
-                break;
-            case this.currentPlayer === $rockbtn && this.computer === $rockbtn:
-                alert = "It's a draw. Play again!";
-                    break;
-            case this.currentPlayer === $scissorsbtn && this.computer === $scissorsbtn:
-                alert = "It's a draw. Play again!";
-                    break;
-            case this.currentPlayer === $paperbtn && this.computer === $paperbtn:
-                alert = "It's a draw. Play agin!";
-                    break;
-            }
-        }
-    }
-
-    // checkWinner(){
-    //     // if (this.currentPlayer = Player.score === 2 
-    // }
-
-//     switchTurn(){
-//         if (this.currentPlayer < this.computer){
-//             this.currentPlayer = click
-//         } else {
-//             this.computer = click
-//         }
-//     }
-// }
+  }
 
 
-document.addEventListener("keydown", function renderPick(player){
-    switch(event.code){
-        case "p":
-            Game.currentPlayer.
-            break;
-        case "o":
-            Game.currentPlayer.currentPlayer
-            break;
-        case "i":
-            Game.currentPlayer.
-            break;
-    }
+  checkWinner() {
+    setTimeout(() => {
+      if (this.scoreboard.userScore === 3) {
+        this.endgame();
+        this.resetGame();
+      } else if (this.scoreboard.compScore === 3) {
+        this.endgame();
+        this.resetGame();
+      }
+    }, 50);
+  }
+
+  endgame() {
+    var modal = document.getElementById('myModal');
+          // modal.classList.remove('notVisible');
+          modal.style.display = "block";
+    var span = document.getElementsByClassName('close')[0];
+    
+          span.onclick = function() {
+                 modal.style.display = 'none';
+                 modal.setAttribute("class", ' modal notVisible');
+                };
+
+          window.onclick = function(event) {
+                  modal.style.display = 'none';
+                  modal.setAttribute('class', 'modal notVisible');
+                  };
+
+    var yesbtn = document.getElementById('yesBtn');
+    var nobtn = document.getElementById('noBtn');
+
+          yesbtn.onclick = function(event) {
+                 modal.style.display = 'none';
+                game.resetGame();
+                modal.setAttribute('class', 'modal notVisible');
+                 };
+
+          nobtn.onclick = function(event) {
+                 modal.style.display = 'none';
+                   game.insertFirstPage();
+                modal.setAttribute('class', 'modal notVisible');
+                };
+  }
+
+  resetGame() {
+      // var score = document.getElementsByClassName('scorecount')[0];
+      // score.innerHTML = `0 - 0`;
+
+       this.scoreboard.userScore = 0;
+       this.scoreboard.compScore = 0;
+  
+
 }
 
 
+        // switchTurn(){
+        //     if (this.currentPlayer === this.user && this.computer !=== this.user){
+                
+        //     } else {
+        //         this.computer = click
+        //     }
+        // }
+    }
 
-function renderPicks(player1, player2) {
+
+
+
+
+// renderPick(player){
+//     console.log(" XXX " + player);
+// }
+
+var game = new Game();
+game.startGame();
+
+
+function renderEverything() {
+game.scoreboard.renderScoreboard();
+//  game. renderPics();
+  game.checkWhoWonTurn();
+  game.checkWinner();
+//  game.choosePick();
 
 }
