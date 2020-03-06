@@ -16,15 +16,15 @@ class Player2 {
 document.addEventListener('keydown', function(event) {
   switch (event.key) {
     case 'a':
-      console.log('Player 1 choose rock'); // change the action so that the player's different option store the data and then reveals when both players have chosen their hand.
+      console.log('Player 1 choose rock');
       game.currentPlayer.chooseHand = 'a';
       break;
     case 's':
-      console.log('Player 1 choose scissors'); // change the action so that the player's different option store the data and then reveals when both players have chosen their hand.
+      console.log('Player 1 choose scissors');
       game.currentPlayer.chooseHand = 's';
       break;
     case 'd':
-      console.log('Player 1 choose paper'); // change the action so that the player's different option store the data and then reveals when both players have chosen their hand.
+      console.log('Player 1 choose paper');
       game.currentPlayer.chooseHand = 'd';
       break;
   }
@@ -33,17 +33,17 @@ document.addEventListener('keydown', function(event) {
 document.addEventListener('keydown', function(event) {
   switch (event.key) {
     case 'j':
-      console.log('Player 2 choose rock'); // change the action so that the player's different option store the data and then reveals when both players have chosen their hand.
+      console.log('Player 2 choose rock');
       game.computer.chooseHand = 'j';
     game.checkWhoWonTurn();
       break;
     case 'k':
-      console.log('Player 2 choose scissors'); // change the action so that the player's different option store the data and then reveals when both players have chosen their hand.
+      console.log('Player 2 choose scissors');
       game.computer.chooseHand = 'k';
       game.checkWhoWonTurn();
       break;
     case 'l':
-      console.log('Player 2 choose paper'); // change the action so that the player's different option store the data and then reveals when both players have chosen their hand.
+      console.log('Player 2 choose paper');
       game.computer.chooseHand = 'l';
       game.checkWhoWonTurn();
       break;

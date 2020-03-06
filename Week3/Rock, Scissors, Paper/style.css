@@ -4,6 +4,7 @@ header {
     width: 100%;
     height: 150px;
 }
+
 .navbox {
     display: flex;
     justify-content: center;
@@ -17,8 +18,6 @@ header {
 body{
     background-color: whitesmoke;
 }
-
-
 
 h1{
     display: flex;
@@ -34,7 +33,6 @@ h1{
     display: flex;
     justify-content: center;
     padding-top: 30px;
-    padding-bottom: 0;
     font-size: 30px;
 }
 
@@ -43,19 +41,19 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 30px;
     font-size: 30px;
+    background-color: rgb(209, 224, 240);
+    height: 120px;
 }
 
-.pvc {
+.scoreNumber {
     font-size: 20px;
-    margin-top: 5px;
 }
-
 
 .row{
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
 }
 
 .userchoiceleft {
@@ -65,7 +63,6 @@ justify-content: center;
     justify-content: flex-start;
     align-items: center;
     padding: 0 100px 0 0px;
-    /* width: 100px; */
     height: fit-content;
     margin: 0px;
 }
@@ -74,7 +71,6 @@ justify-content: center;
     display: flex;
     justify-content: center;
 }
-
 
 h2 {
     display: flex;
@@ -93,7 +89,7 @@ li {
 }
 
 button{
-    border-radius: 50%;
+    border-radius: 100%;
     border-style: none;
 }
 
@@ -104,6 +100,10 @@ img {
     height: 100px;
 }
 
+.imgAttribute {
+    opacity: 0.3;
+}
+
 .userchoiceright {
     float: right;
     display: flex;
@@ -111,149 +111,143 @@ img {
     justify-content: flex-end;
     align-items: center;
     padding: 0 0 0px 100px;
-    /* width: 100px; */
     height: fit-content;
     margin: 0px;
 }
 
-
-
-/* -------------------MODAL ------------------*/
-
 .modal {
-  display: none;
-  position: fixed; 
-  /* z-index: 1;  */
-  padding-top: 80px; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+    display: none;
+    position: fixed; 
+    padding-top: 80px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 .notVisible{
-  display: none; 
+    display: none; 
 }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 4px solid rgb(133, 205, 250);
-  width: 80%;
+.winnerRevealModalContent {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 4px solid rgb(133, 205, 250);
+    width: 80%;
 }
 
-/*  Close Button */
+.afterWinRevealQuestion {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
 .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-/*  Yes I want to play again Button */
 #yesBtn {
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-
-  background-color: white; 
-  color: black; 
-  border: 2px solid rgb(74, 186, 0);
-
-  background-color: rgb(105, 186, 0);
-  color: white;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(74, 186, 0);
+    background-color: rgb(105, 186, 0);
+    color: white;
 }
 
-/*  No I do not want to play again Button */
 #noBtn {
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-
-  background-color: white; 
-  color: black; 
-  border: 2px solid rgb(186, 43, 0);
-  
-  background-color: rgb(186, 12, 0);
-  color: white;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(186, 43, 0);
+    background-color: rgb(186, 12, 0);
+    color: white;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* //Startscreen button// */
-
-.modal2 {
-  display: none;
-  position: fixed; 
-  /* z-index: 1;  */
-  padding-top: 80px; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+.ybuttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.notVisible{
-  display: none; 
+.screenpageModalContent {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 4px solid rgb(133, 205, 250);
+    width: 50%;
 }
 
-/* Modal Content */
-.modal-content2 {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 4px solid rgb(133, 205, 250);
-  width: 80%;
+.startscreenInstruct{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 
-/*  Close Button */
 .close2 {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaaaaa;
+    float: right;
+    display: flex;
+    justify-self: flex-end;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#StartButton {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(74, 186, 0);
+    background-color: rgb(105, 186, 0);
+    color: white;
 }
